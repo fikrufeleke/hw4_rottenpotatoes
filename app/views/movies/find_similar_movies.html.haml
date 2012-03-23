@@ -1,0 +1,19 @@
+%h1 Similar Movies
+- if !(@movies.nil?) 
+  %table#movies
+    %thead
+      %tr
+        %th Movie Title
+        %th Rating
+        %th Director
+        %th Release Date
+        %th More Info
+    %tbody
+      - @movies.each do |movie|
+        %tr
+          %td= movie.title 
+          %td= movie.rating
+          %td= movie.director
+          %td= movie.release_date
+    
+= link_to 'Back to movie list', movies_path
