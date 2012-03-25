@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
   end
 
   def index
+    flash[:notice] = flash[:notice]
     sort = params[:sort] || session[:sort]
     case sort
     when 'title'
@@ -61,10 +62,13 @@ class MoviesController < ApplicationController
   def find_similar_movies
     movie = Movie.find_by_id(params[:id])
     director = movie.director
-    if director.nil?
-      flash[:notice] = "'#{movie.title}' has no director info" and return 
-     end
+    if director.nil? || director.strip==""
+      flash[:notice] = "'#{movie.title}' has no director info"
+      #flash.keep(:notice)
+      redirect_to movies_path
+    else
     @movies = Movie.find_in_mvdb(director) and return
+    end
   end
 
 end

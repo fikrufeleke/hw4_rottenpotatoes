@@ -1,0 +1,26 @@
+one:
+  id: 1
+  title: 'A Fake Title'
+  rating: 'PG'
+  director: 'Abebe'
+  release_date: { 10.years.ago }
+two:
+  id: 2
+  title: 'A Fake Title' 
+  director: 'Abebe'
+  rating: 'PG'
+  director: 'Teshe'
+  release_date: { 10.years.ago }
+three:
+  id: 3
+  title: 'A Fake Title'
+  rating: 'PG'
+  director: 'Abebe'
+  release_date: { 10.years.ago }
+four:
+  id: 4
+  title: 'A Fake Title'
+  rating: 'PG'
+  director: ""
+  release_date: { 10.years.ago }  
+  
